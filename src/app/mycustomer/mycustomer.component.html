@@ -1,0 +1,46 @@
+<div class="container col-md-12 " style="padding-top:0px;">
+    <div class="card">
+      
+        <div class="input-group card-header" id="head" style="padding-top:20px; padding-bottom: 20px;">
+            <input class="form-control" type="search" value="search" id="example-search-input" [(ngModel)]="search">
+            <span class="input-group-append">
+                <div class="input-group-text bg-transparent"><i class="fa fa-search"></i></div>
+            </span>
+        </div>
+      
+        <div class="card-body">
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container" >
+                <table class="table table-hover ">
+                    <thead class="bg-success">
+                      <tr>
+                        <th scope="col">CustomerID</th>
+                        <th scope="col">A/c Number</th>
+                        <th scope="col">FirstName</th>
+                        <th scope="col">LastName</th>
+                        <th scope="col">MobileNumber</th>
+                        <th scope="col">Balance(INR)</th>
+                        <th scope="col">Update</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor= 'let customer of users | filter : search' >
+                      <tr>
+                        <th scope="row">{{customer.customerId}}</th>
+                        <td>{{customer.accountno}}</td>
+                        <td>{{customer.firstname}}</td>
+                        <td>{{customer.lastname}}</td>
+                        <td>{{customer.mobileno}}</td>
+                        <td>{{customer.balance}}</td>
+                        <td><button type="submit" class="btn btn-success" (click)="update(customer.customerId)"><i class="fa fa-pencil" style="font-size:24px"></i></button></td>
+                        <td><button type="submit" class="btn btn-danger"(click)="onDelete(customer.customerId)"><i class="fa fa-trash-o" aria-hidden="true" style="font-size:24px"></i></button></td>
+                        
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>

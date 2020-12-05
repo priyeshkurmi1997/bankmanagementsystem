@@ -1,0 +1,43 @@
+<div >
+<div class="card bg" style="padding-top: 10px;">
+  <div class="card-body ">
+    <div class="card col-lg-5 offset-lg-4 mt-5" >
+      <div class="card-header">
+          <h3 class="text-lg-center">ADD BENEFICIERY</h3>
+      </div>
+      <p>&nbsp;</p>
+    <form [formGroup]='beneficiaryForm'>
+     
+      <div class="form-row">
+        <div class="form-group col-md-6">
+          <label>FirstName</label>
+          <input type="text" class="form-control no-outline" id="fname" placeholder="firstname" formControlName="firstname" name="firstname" [(ngModel)]="benef.firstname">
+        </div>
+        <div class="form-group col-md-6">
+          <label for="inputPassword4">Lastname</label>
+          <input type="text" class="form-control no-outline" id="lname" placeholder="lastname"formControlName="lastname" name="lastname" [(ngModel)]="benef.lastname">
+        </div>
+      </div>
+      <div class="form-group">
+        <label>Account Number</label>
+        <input type="number" class="form-control no-outline" id="accno" formControlName="accountno" name="accountno" [(ngModel)]="benef.accountno">
+      </div>
+
+
+      <div class="form-group">
+        <label for="exampleInputEmail1">Email Address</label>
+        <input type="email" class="form-control no-outline" id="exampleInputEmail1" aria-describedby="emailHelp" formControlName="email" name="email" [(ngModel)]="benef.email">
+      </div>
+      <div class="form-group">
+        <label for="exampleInputPassword1">Mobile Number</label>
+        <input type="password" class="form-control no-outline" id="mobileno" formControlName="mobileno" name="mobileno" [(ngModel)]="benef.mobileno">
+      </div>
+      <p>&nbsp;</p>
+      <button type="button" routerLink="/transeferfunds" class="btn btn-light" style='margin-right:16px' (click)="back()"><i class="fa fa-arrow-circle-left" style="font-size:48px"></i></button>
+      <button type="submit" class="btn btn-primary" style='margin-right:16px'(click)="onAddBenef()">SUBMIT</button>
+      <button type="reset" class="btn btn-danger" style='margin-right:16px'>RESET</button>
+      <p>&nbsp;&nbsp;&nbsp;</p>
+    </form>
+  </div>
+</div>
+</div>

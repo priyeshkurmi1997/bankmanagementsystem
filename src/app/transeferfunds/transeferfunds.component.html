@@ -1,0 +1,51 @@
+
+
+
+
+<div class="container col-md-12 " style="padding-top:0px;">
+    <div class="card">
+        <div class="input-group card-header" id="head" style="padding-top:20px; padding-bottom: 20px;">
+            <button type="submit" class="btn btn-warning pull-right" (click)='topay(1)'>
+                <a routerLink="/addbeneficiery">ADD BENEFICIERY</a> </button>
+                <p>&nbsp;&nbsp;&nbsp;</p>
+            <input class="form-control col-md-4" type="search" id="example-search-input" [(ngModel)]="search3">
+            <span class="input-group-append">
+                <Button type="submit" class="btn btn-dark"><i class="fa fa-search" style="font-size:24px"></i></Button>
+            </span>
+        </div> 
+        <div class="card-body">
+          <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <table class="table table-hover ">
+                    <thead class="bg-success">
+                      <tr>
+                        <th scope="col">Beneficiary Id</th>
+                        <th scope="col">Firstname</th>
+                        <th scope="col">Lastname</th>
+                        <th scope="col">Account No.</th>
+                        <th scope="col">Mobileno</th>
+                        <th scope="col">Transefer</th>
+                        <th scope="col">Delete</th>
+                      </tr>
+                    </thead>
+                    <tbody *ngFor= 'let benef of beneficiaries | filter3:search3'>
+                      <tr>
+                        <th scope="row">{{benef.beneficiaryId}}</th>
+                        <td>{{benef.beneficiaryfirstName}}</td>
+                        <td>{{benef.beneficiarylastName}}</td>
+                        <td>{{benef.b_accountno}}</td>
+                        <td>{{benef.mobileno}}</td>
+                        <td><button type="submit"class="btn btn-info" (click)="topay(benef.beneficiaryId)">PAY</button></td>
+                        <td><button type="submit" class="btn btn-danger"(click)="onDelete(benef.beneficiaryId)"><i class="fa fa-trash" style="font-size:20px;color:rgb(10, 9, 9)"></i></button></td>
+
+                    </tbody>
+                  </table>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+    
+<!-- <app-addbeneficiery *ngIf="selected==1"></app-addbeneficiery> -->
+<!-- <app-paytobeneficiery *ngIf="selected==2" ></app-paytobeneficiery> -->

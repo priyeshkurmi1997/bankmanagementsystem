@@ -1,0 +1,292 @@
+<div class="card">
+
+<div class="jumbotron jumbotron-sm" style="margin-top:0px;">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12 col-lg-12">
+              <h1 class="h1">
+                  UPDATE/VIEW CUSTOMER <small>Welcome to our bank</small></h1>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div >
+              <form [formGroup]='updatecustomer'>
+                <ng-container *ngIf="customers">
+              <div class="form-row">
+                  <div class="col-md-12">
+                          <div class="form-row">
+                           
+                            <div class="form-group col-md-4">
+                              <label>FirstName</label>
+                              <input type="text" class="form-control no-outline" id="fname" placeholder="firstname" formControlName="firstname" minlength="3" maxlength="10"  name="firstname" [(ngModel)]="customers.firstname" >
+                              <div
+                                *ngIf="updatecustomer.get('firstname').invalid && (updatecustomer.get('firstname').dirty || updatecustomer.get('firstname').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('firstname').errors.required">
+                                  firstName is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('firstname').errors.maxlength">
+                                  Name cannot be more than 10 characters long.
+                                </div>
+                                <div *ngIf="updatecustomer.get('firstname').errors.minlength">
+                                  Name must be at least 3 characters long.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group col-md-4" style="padding-left: 30px;">
+                              <label for="inputPassword4">Lastname</label>
+                              <input type="text" class="form-control no-outline" id="lname" placeholder="lastname" formControlName="lastname"
+                                minlength="3" maxlength="10" name="lastname" [(ngModel)]="customers.lastname">
+                              <div
+                                *ngIf="updatecustomer.get('lastname').invalid && (updatecustomer.get('lastname').dirty || updatecustomer.get('lastname').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('lastname').errors.required">
+                                  laststName is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('lastname').errors.maxlength">
+                                  Name cannot be more than 10 characters long.
+                                </div>
+                                <div *ngIf="updatecustomer.get('lastname').errors.minlength">
+                                  Name must be at least 3 characters long.
+                                </div>
+                              </div>
+                            </div>
+                            <div class="form-group col-md-3" style="padding-left: 30px;">
+                              <label>Mobile Number</label>
+                              <input type="number" class="form-control no-outline" id="mobileno" formControlName="mobileno" maxlength="10" minlength="9"
+                                required name="mobileno" [(ngModel)]="customers.mobileno">
+                              <div
+                                *ngIf="updatecustomer.get('mobileno').invalid && (updatecustomer.get('mobileno').dirty || updatecustomer.get('mobileno').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('mobileno').errors.required">
+                                  mobileno is required.
+                                </div>
+                             
+                              </div>
+                            </div>
+                          </div>
+                            <!-- <fieldset class="form-group">
+                              <div class="row">
+                                <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+                                <div class="col-sm-10">
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                                    <label class="form-check-label" for="gridRadios1">
+                                      Male
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                                    <label class="form-check-label" for="gridRadios2">
+                                      Female
+                                    </label>
+                                  </div>
+                                  <div class="form-check">
+                                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                                    <label class="form-check-label" for="gridRadios3">
+                                      Others
+                                    </label>
+                                  </div>
+                                </div>
+                              </div>
+                            </fieldset> -->
+                            <div class="form-group col-md-3" style="padding-left: 30px;">
+                              <label>Gender</label>
+                              <select type="text" class="form-control no-outline" formControlName="gender" name="gender" [(ngModel)]="customers.gender">
+                                <div
+                                  *ngIf="updatecustomer.get('gender').invalid && (updatecustomer.get('gender').dirty || updatecustomer.get('gender').touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="updatecustomer.get('gender').errors.required">
+                                    gender is required.
+                                  </div>
+                                </div>
+                                <option selected>Choose...</option>
+                                <option> Male</option>
+                                <option> Female</option>
+                                <option> other</option>
+                              </select>
+                            </div>
+                          <div class="form-row">
+                            <div class="form-group col-md-3">
+                              <label>Dob</label>
+                              <input type="date" class="form-control no-outline" id="inputPassword2" placeholder="choose date" formControlName="dob"
+                                required disabled name="dob" [(ngModel)]="customers.dob">
+                            </div>
+                            <div class="form-group col-md-6" style="padding-left: 40px;">
+                              <label>Adhar Number</label>
+                              <input type="number" class="form-control no-outline" id="inputPassword2" placeholder="choose date"
+                                formControlName="adharno" [(ngModel)]="customers.adharno" minlength="10" required disabled>
+                              <div
+                                *ngIf="updatecustomer.get('adharno').invalid && (updatecustomer.get('adharno').dirty || updatecustomer.get('adharno').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('adharno').errors.required">
+                                  adharno is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('adharno').errors.minlength">
+                                  adharno cannot be more than 10 characters long.
+                                </div>
+                                <div *ngIf="updatecustomer.get('adharno').errors.minlength">
+                                  adharno must be at least 10 characters long.
+                                </div>
+                              </div>
+                            </div>
+
+                          </div>
+                          <div class="form-row">
+                            
+                          </div>
+                            <div class="form-group col-md-6">
+                              <label for="exampleInputEmail1">EmailID</label>
+                              <input type="email" class="form-control no-outline" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                formControlName="emailId" required name="emailId" [(ngModel)]="customers.emailId"> 
+                            </div>
+                            <div class="form-row">
+                          
+                          </div>
+                      
+                      
+                            <div class="form-group">
+                              <label for="inputAddress">Address1</label>
+                              <input type="text" class="form-control no-outline" id="inputAddress" placeholder="1234 Main St" formControlName="address1" name="address1" [(ngModel)]="customers.address1">
+                              <div
+                                *ngIf="updatecustomer.get('address1').invalid && (updatecustomer.get('address1').dirty || updatecustomer.get('address1').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('address1').errors.required">
+                                  address1 is required.
+                                </div>
+                              </div>
+                            </div>
+                      
+                      
+                            <div class="form-group">
+                              <label for="inputAddress2">Address 2</label>
+                              <input type="text" class="form-control no-outline" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+                            <div class="form-row">
+                              <div class="form-group col-md-3">
+                                <label>Account Number</label>
+                                <input type="number" class="form-control no-outline" id="Accno" formControlName="accountno" minlength="6" maxlength="6"
+                                  required disabled [(ngModel)]="customers.accountno">
+                                <div
+                                  *ngIf="updatecustomer.get('accountno').invalid && (updatecustomer.get('accountno').dirty || updatecustomer.get('accountno').touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="updatecustomer.get('accountno').errors.required">
+                                    accountno is required.
+                                  </div>
+                                  <div *ngIf="updatecustomer.get('accountno').errors.maxlength">
+                                    accountno cannot be more than 10 characters long.
+                                  </div>
+                                  <div *ngIf="updatecustomer.get('accountno').errors.minlength">
+                                    accountno must be at least 10 characters long.
+                                  </div>
+                                </div>
+                              </div>
+                              <div class="form-group col-md-3 " style="padding-left: 50px;">
+                                <label>Branch</label>
+                                <select class="form-control no-outline" formControlName="branch" name="branch" [(ngModel)]="customers.branch">
+                                  <div
+                                    *ngIf="updatecustomer.get('branch').invalid && (updatecustomer.get('branch').dirty || updatecustomer.get('branch').touched)"
+                                    class="alert alert-danger">
+                                    <div *ngIf="updatecustomer.get('branch').errors.required">
+                                      branch is required.
+                                    </div>
+                                  </div>
+                                  <option selected>Choose...</option>
+                                  <option> Mumbai</option>
+                                  <option> banglore</option>
+                                </select>
+                              </div>
+                            </div>
+                            <div class="form-row">
+                            <div class="form-group col-md-4">
+                              <label>Openinng Balance</label>
+                              <input type="number" class="form-control no-outline" id="balance" formControlName="balance" maxlength="7" required name="balance"[(ngModel)]="customers.balance">
+                              <div
+                                *ngIf="updatecustomer.get('balance').invalid && (updatecustomer.get('balance').dirty || updatecustomer.get('balance').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('balance').errors.required">
+                                  balance is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('balance').errors.maxlength">
+                                  balance cannot be more than 10 characters long.
+                                </div>
+                              </div>
+                          
+                            </div>
+                            <div class="form-group col-md-3" style="padding-left: 30px;">
+                              <label>Pin ( 4 digit)</label>
+                              <input type="number" class="form-control no-outline" id="pin" formControlName="pin" minlength="3" maxlength="4" required name="pin" [(ngModel)]="customers.pin">
+                              <div *ngIf="updatecustomer.get('pin').invalid && (updatecustomer.get('pin').dirty || updatecustomer.get('pin').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('pin').errors.required">
+                                  pin is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('pin').errors.maxlength">
+                                  pin cannot be more than 4 characters long.
+                                </div>
+                                <div *ngIf="updatecustomer.get('pin').errors.minlength">
+                                  pin must be at least 4 characters long.
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                            <div class="form-group col-md-4">
+                              <label for="username"> Username</label>
+                              <input type="text" class="form-control no-outline" placeholder="Username" formControlName="username" minlength="6" maxlength="10" required name="username" [(ngModel)]="customers.username">
+                              <div
+                                *ngIf="updatecustomer.get('username').invalid && (updatecustomer.get('username').dirty || updatecustomer.get('username').touched)"
+                                class="alert alert-danger">
+                                <div *ngIf="updatecustomer.get('username').errors.required">
+                                  username is required.
+                                </div>
+                                <div *ngIf="updatecustomer.get('username').errors.maxlength">
+                                  username cannot be more than 6 characters long.
+                                </div>
+                                <div *ngIf="updatecustomer.get('username').errors.minlength">
+                                  username must be at least 10 characters long.
+                                </div>
+                              </div>
+                            </div>
+                            
+                            <div class="form-group col-md-4">
+                              <label for="Password">Password</label>
+                      
+                                <input type="text" class="form-control no-outline" placeholder="password" formControlName="password" minlength="6" maxlength="10" required name="password" [(ngModel)]="customers.password">
+                                <div
+                                  *ngIf="updatecustomer.get('password').invalid && (updatecustomer.get('password').dirty || updatecustomer.get('password').touched)"
+                                  class="alert alert-danger">
+                                  <div *ngIf="updatecustomer.get('password').errors.required">
+                                    password is required.
+                                  </div>
+                                  <div *ngIf="updatecustomer.get('password').errors.maxlength">
+                                    password cannot be more than 6 characters long.
+                                  </div>
+                                  <div *ngIf="updatecustomer.get('password').errors.minlength">
+                                    password must be at least 10 characters long.
+                                  </div>
+                                </div>
+                              
+                            </div>
+                            <p>&nbsp;</p>
+                            <button type="reset" class="btn btn-light" style='margin-right:16px'(click)="back()"><i class="fa fa-angle-double-left" style="font-size:36px"></i></button>
+                            <button  class="btn btn-primary" style='margin-right:16px' (click)="onSubmit()">UPDATE</button>
+                            <button type="reset" class="btn btn-danger" style='margin-right:16px'>RESET</button>
+                         
+                          
+                            <p>&nbsp;&nbsp;&nbsp;</p>
+                      </div>
+                      
+                      </div>
+                    </ng-container>
+              </form>
+          </div>
+         
+      </div>
+     
+</div>
+
+</div>

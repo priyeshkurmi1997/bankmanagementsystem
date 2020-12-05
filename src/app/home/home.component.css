@@ -1,0 +1,17 @@
+img {
+    height: 60vh;
+  }
+  section {
+    width: 1000px;
+    height: 100px;
+    padding: 15px;
+    background-color: rgb(230, 230, 197);
+    box-shadow: 10px 10px 5px grey;
+  }
+  h4 {
+    text-shadow: 2px 2px 5px rgb(236, 124, 124);
+  }
+  
+  .blue{
+      background-color: teal;
+  }

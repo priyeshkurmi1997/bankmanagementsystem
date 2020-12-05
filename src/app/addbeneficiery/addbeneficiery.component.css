@@ -1,0 +1,21 @@
+input {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    border-bottom-style: groove;
+    background-color:white;
+  }
+  .no-outline:focus {
+    outline: none;
+  }
+
+  .bg {
+    /* The image used */
+    background-image: url("/assets/images/c1.jpg");
+    /* Full height */
+    height: 100%;
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }

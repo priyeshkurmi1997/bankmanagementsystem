@@ -1,0 +1,146 @@
+<div class="card">
+
+    <div class="jumbotron jumbotron-sm" style="margin-top:0px;">
+      <div class="container">
+          <div class="row">
+              <div class="col-sm-12 col-lg-12">
+                  <h1 class="h1">
+                      UPDATE/VIEW CUSTOMER <small>Welcome to our bank</small></h1>
+              </div>
+          </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+          <div class="col-md-12">
+              <div *ngIf ="customers" >
+                  <form [formGroup]='updatecustomer'>
+                    
+                  <div class="form-row">
+                      <div class="col-md-12">
+                              <div class="form-row">
+                               
+                                <div class="form-group col-md-4">
+                                  <label>FirstName</label>
+                                  <input type="text" class="form-control no-outline" id="fname" placeholder="firstname" formControlName="firstname" minlength="3" maxlength="10"  name="firstname" [(ngModel)]="customers.firstname" >
+                                 
+                                </div>
+                                <div class="form-group col-md-4" style="padding-left: 30px;">
+                                  <label for="inputPassword4">Lastname</label>
+                                  <input type="text" class="form-control no-outline" id="lname" placeholder="lastname" formControlName="lastname"
+                                    minlength="3" maxlength="10" name="lastname" [(ngModel)]="customers.lastname">
+                                  
+                                </div>
+                                <div class="form-group col-md-3" style="padding-left: 30px;">
+                                  <label>Mobile Number</label>
+                                  <input type="number" class="form-control no-outline" id="mobileno" formControlName="mobileno" maxlength="10" minlength="9"
+                                    required name="mobileno" [(ngModel)]="customers.mobileno">
+                                  
+                                </div>
+                              </div>
+                            
+                                <div class="form-group col-md-3" style="padding-left: 30px;">
+                                  <label>Gender</label>
+                                  <input type="text" class="form-control no-outline" id="mobileno" formControlName="gender" maxlength="10" minlength="9"
+                                  required name="gender" [(ngModel)]="customers.gender" disabled>
+                                </div>
+                              <div class="form-row">
+                                <div class="form-group col-md-3">
+                                  <label>Dob</label>
+                                  <input type="text" class="form-control no-outline" id="inputPassword2" placeholder="choose date" formControlName="dob"
+                                    required  name="dob" [(ngModel)]="customers.dob" disabled>
+                                </div>
+                                <div class="form-group col-md-6" style="padding-left: 40px;">
+                                  <label>Adhar Number</label>
+                                  <input type="number" class="form-control no-outline" id="inputPassword2" placeholder="choose date"
+                                    formControlName="adharno" [(ngModel)]="customers.adharno" minlength="10" required disabled>
+                                  
+                                </div>
+    
+                              </div>
+                              <div class="form-row">
+                                
+                              </div>
+                                <div class="form-group col-md-6">
+                                  <label for="exampleInputEmail1">EmailID</label>
+                                  <input type="email" class="form-control no-outline" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                    formControlName="emailId" required name="emailId" [(ngModel)]="customers.emailId"> 
+                                </div>
+                                <div class="form-row">
+                              
+                              </div>
+                          
+                          
+                                <div class="form-group">
+                                  <label for="inputAddress">Address1</label>
+                                  <input type="text" class="form-control no-outline" id="inputAddress" placeholder="1234 Main St" formControlName="address1" name="address1" [(ngModel)]="customers.address1">
+                                  
+                                </div>
+                          
+                          
+                                <div class="form-group">
+                                  <label for="inputAddress2">Address 2</label>
+                                  <input type="text" class="form-control no-outline" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                                </div>
+                                <div class="form-row">
+                                  <div class="form-group col-md-3">
+                                    <label>Account Number</label>
+                                    <input type="number" class="form-control no-outline" id="Accno" formControlName="accountno" minlength="6" maxlength="6"
+                                      required  [(ngModel)]="customers.accountno" disabled>
+                                    
+                                  </div>
+                                  <div class="form-group col-md-3 " style="padding-left: 50px;">
+                                    <label>Branch</label>
+                                    <select class="form-control no-outline" formControlName="branch" name="branch" [(ngModel)]="customers.branch">
+                                     
+                                      <option selected>Choose...</option>
+                                      <option> Mumbai</option>
+                                      <option> banglore</option>
+                                    </select>
+                                  </div>
+                                </div>
+                                <div class="form-row">
+                                <div class="form-group col-md-4">
+                                  <label>Openinng Balance</label>
+                                  <input type="number" class="form-control no-outline" id="balance" formControlName="balance" maxlength="7" required name="balance"[(ngModel)]="customers.balance">
+                                  
+                              
+                                </div>
+                                <div class="form-group col-md-3" style="padding-left: 30px;">
+                                  <label>Pin ( 4 digit)</label>
+                                  <input type="number" class="form-control no-outline" id="pin" formControlName="pin" minlength="3" maxlength="4" required name="pin" [(ngModel)]="customers.pin">
+                                  
+                                </div>
+                              </div>
+                                <div class="form-group col-md-4">
+                                  <label for="username"> Username</label>
+                                  <input type="text" class="form-control no-outline" placeholder="Username" formControlName="username" minlength="6" maxlength="10" required name="username" [(ngModel)]="customers.username">
+                                  
+                                </div>
+                                
+                                <div class="form-group col-md-4">
+                                  <label for="Password">Password</label>
+                          
+                                    <input type="text" class="form-control no-outline" placeholder="password" formControlName="password" minlength="6" maxlength="10" required name="password" [(ngModel)]="customers.password">
+                                   
+                                </div>
+                                <p>&nbsp;</p>
+                                <button type="reset" class="btn btn-light" style='margin-right:16px'(click)="back()"><i class="fa fa-angle-double-left" style="font-size:36px"></i></button>
+                                <button  class="btn btn-primary" style='margin-right:16px' (click)="onSubmit()">UPDATE</button>
+                                <button type="reset" class="btn btn-danger" style='margin-right:16px'>RESET</button>
+                             
+                              
+                                <p>&nbsp;&nbsp;&nbsp;</p>
+                          </div>
+                          
+                          </div>
+                        
+                  </form>
+              </div>
+             
+          </div>
+         
+    </div>
+    
+    </div>
+    

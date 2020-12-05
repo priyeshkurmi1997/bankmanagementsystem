@@ -1,0 +1,57 @@
+<div class="bg">
+<div class="col-md-6 offset-4" style="padding-top: 90px;">
+  
+  <div class="card " >
+    <div class="card-body ">
+      
+        <div class="card-header">
+            <h3 class="text-lg-center">PAY TO BENEFICIERY</h3>
+        </div>
+        <p>&nbsp;</p>
+  <form [formGroup]="paymentform" *ngIf="benefeciary" >
+    <h4>To:</h4>
+    <div class="form-row" >
+        
+        <div class="form-group">
+            <label> Account Number</label>
+            <input type="number" class="form-control no-outline" id="accno" formControlName="b_accountno" name="b_accountno"[(ngModel)]="benefeciary.b_accountno" disabled>
+        </div>
+        <div class="form-group" style="padding-left: 50px;">
+          <label> Date</label>
+          <input type="date" class="form-control no-outline" id="accno" formControlName="date" name="date">
+      </div>
+    </div>
+    <div class="form-row">
+          
+      <div class="form-group">
+          <label> Beneficiary Name</label>
+          <input type="text" class="form-control no-outline" id="accno" formControlName="beneficiaryfirstName" name="beneficiaryfirstName" [(ngModel)]="benefeciary.beneficiaryfirstName" disabled>
+      </div>
+      <div class="form-group" style="padding-left: 50px;">
+        <label> Enter Amount(in INR)</label>
+        <input type="number" class="form-control no-outline" id="accno" formControlName="amount" name="amount">
+    </div>
+  </div>
+        <div class="form-row">
+          <div class="form-group">
+              <label> Pin(4 digit)</label>
+              <input type="number" class="form-control no-outline" id="accno" formControlName="pin" name="pin">
+          </div>
+          <div class="form-group" style="padding-left: 50px;">
+            <label> Remarks</label>
+            <input type="text" class="form-control no-outline" id="accno" formControlName="remarks" name="remarks">
+        </div>
+      </div>
+      <div class="form-row">
+        
+    </div>
+      
+       
+        <button type="button" class="btn btn-light" style='margin-right:16px' (click)="back()"><i class="fa fa-arrow-circle-left" style="font-size:32px;"></i></button>
+      <button type="submit" class="btn btn-primary" style='margin-right:16px'(click)="onAddTransaction()">PAY</button>
+      <button type="reset" class="btn btn-danger" style='margin-right:16px'>RESET</button>
+    </form>
+      </div>
+    </div>
+  </div>
+</div>

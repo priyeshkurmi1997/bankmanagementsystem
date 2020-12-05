@@ -1,0 +1,55 @@
+
+<div class="card">
+<div class="jumbotron jumbotron-sm" style="margin-top:0px;">
+  <div class="container">
+      <div class="row">
+          <div class="col-sm-12 col-lg-12">
+              <h1 class="h1">
+                  Quinnox Bank News <small>Post Exclusive News</small></h1>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="container">
+  <div class="row">
+      <div class="col-md-12">
+          <div class="well well-sm">
+              <form #form="ngForm" >
+                  <div><h5>{{message}}</h5></div>
+              <div class="row">
+                  <div class="col-md-6">
+                      <div class="form-group">
+                          <label for="name">
+                              News Heading</label>
+                          <input type="text" class="form-control no-outline" id="name" placeholder="Heading" name="heading" [(ngModel)]="news.heading"  required>
+                      </div>
+                      <div class="form-group">
+                          <label for="email">
+                              Sub Heading</label>
+                          <div class="input-group">
+                              <span class="input-group-addon"><span class="glyphicon glyphicon-envelope"></span>
+                              </span>
+                              <input type="text" class="form-control no-outline" placeholder="Sub Heading" name="subheading" [(ngModel)]="news.subheading" required></div>
+                      </div>
+                      
+                  </div>
+                  <div class="col-md-12">
+                      <div class="form-group">
+                          <label for="name">
+                              News Content</label>
+                          <textarea type="text" id="message" class="form-control" rows="9" cols="25"  name="content" [(ngModel)]="news.content" required
+                              placeholder="Message"></textarea>
+                      </div>
+                  </div>
+                  
+                  <div class="col-md-12">
+                      <button type="submit" class="btn btn-primary " id="btnContactUs" name="postnews" (click)="onPostNews()">
+                          Post News</button>
+                  </div>
+                  <p>&nbsp;&nbsp;&nbsp;</p>
+              </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>

@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div>
+<div class="card bg" style="padding-top: 70px;">
+    <div class="card-header">
+      WORLD BANK  NEWSLETTER REALEASE
+    </div>
+    <div class="card-body" *ngFor= 'let news of newses'>
+      
+      <div class="jumbotron"  >
+        <h1 class="display-4">{{news.heading}}</h1>
+        <p class="lead">{{news.subheading}}</p>
+        <hr class="my-4">
+        <p>{{news.content}}</p>
+        
+      </div>
+    </div>
+  </div>
+</div>
